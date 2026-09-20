@@ -7,8 +7,8 @@ import {
   X,
   Phone,
   MessageCircle,
-  Flame,
 } from "lucide-react";
+import logoImg from "@/assets/logo.jpg";
 import { brand, navLinks } from "@/data/site";
 import { useShop } from "@/lib/shop-store";
 import { Button } from "@/components/ui/button";
@@ -75,15 +75,17 @@ export function Navbar({ onOpenWishlist }: { onOpenWishlist: () => void }) {
               href="#home"
               className="group flex items-center gap-2 sm:gap-2.5 transition-transform hover:scale-[1.01] min-w-0"
             >
-              <div className="flex h-8 w-8 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary via-primary to-spice text-primary-foreground shadow-sm shadow-primary/25 transition-transform group-hover:rotate-6">
-                <Flame className="h-4.5 w-4.5 sm:h-5 sm:w-5 text-gold animate-pulse" />
-              </div>
+              <img
+                src={logoImg}
+                alt={brand.nameEn}
+                className="h-9 w-9 sm:h-11 sm:w-11 rounded-full object-cover shrink-0 shadow-xs border border-primary/20 transition-transform group-hover:scale-105"
+              />
               <div className="flex flex-col min-w-0 justify-center">
                 <span className="font-display text-sm sm:text-base md:text-lg font-bold tracking-tight text-foreground leading-none truncate">
                   {brand.nameEn}
                 </span>
-                <span className="text-[9px] sm:text-[10px] font-semibold tracking-wider text-muted-foreground uppercase leading-none mt-1 truncate">
-                  Pure Spices & Ready Premixes
+                <span className="text-[9px] sm:text-[10px] font-semibold tracking-wider text-primary uppercase leading-none mt-1 truncate">
+                  Pure Flavours • Healthy Tomorrow
                 </span>
               </div>
             </a>
@@ -172,6 +174,19 @@ export function Navbar({ onOpenWishlist }: { onOpenWishlist: () => void }) {
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="xl:hidden border-t border-border/80 bg-background/98 px-5 py-5 shadow-xl animate-fade-up">
+          {/* Mobile Drawer Header with Logo */}
+          <div className="flex items-center gap-3 pb-4 mb-4 border-b border-border/80">
+            <img
+              src={logoImg}
+              alt={brand.nameEn}
+              className="h-10 w-10 rounded-full object-cover border border-primary/20 shadow-xs"
+            />
+            <div>
+              <p className="font-display font-bold text-sm text-foreground leading-tight">{brand.nameEn}</p>
+              <p className="text-[10px] text-primary font-medium mt-0.5">Pure Flavours • Healthy Tomorrow</p>
+            </div>
+          </div>
+
           <div className="flex flex-col gap-2 pb-5 border-b border-border">
             {navLinks.map((link) => (
               <a

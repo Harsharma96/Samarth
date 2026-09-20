@@ -1,5 +1,6 @@
 import { brand, footerLinks } from "@/data/site";
-import { Flame, Phone, MessageCircle, MapPin, Instagram, Heart } from "lucide-react";
+import logoImg from "@/assets/logo.jpg";
+import { Phone, MessageCircle, MapPin, Instagram, Heart } from "lucide-react";
 
 export function Footer() {
   return (
@@ -9,15 +10,17 @@ export function Footer() {
           {/* Brand Bio */}
           <div className="col-span-2 md:col-span-2 lg:col-span-4 flex flex-col gap-2.5 sm:gap-4">
             <div className="flex items-center gap-2.5 sm:gap-3">
-              <div className="flex h-8 w-8 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl sm:rounded-2xl bg-spice text-primary-foreground shadow-sm">
-                <Flame className="h-4 w-4 sm:h-6 sm:w-6 text-gold" />
-              </div>
+              <img
+                src={logoImg}
+                alt={brand.name}
+                className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover shrink-0 bg-white p-0.5 shadow-md border border-white/20"
+              />
               <div>
                 <span className="font-display text-base sm:text-lg font-bold tracking-tight text-white block leading-tight">
                   {brand.name}
                 </span>
-                <span className="text-[10px] sm:text-[11px] font-semibold tracking-wider text-neutral-300 uppercase">
-                  {brand.sub}
+                <span className="text-[10px] sm:text-[11px] font-semibold tracking-wider text-gold uppercase">
+                  Pure Flavours • Healthy Tomorrow
                 </span>
               </div>
             </div>

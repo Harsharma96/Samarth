@@ -86,6 +86,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: `${brand.nameEn} | Authentic Spices & Premixes` },
       { property: "og:description", content: brand.promise },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/logo.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: brand.instagram },
     ],
@@ -100,7 +101,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/logo.jpg", type: "image/jpeg" },
+      { rel: "apple-touch-icon", href: "/logo.jpg" },
     ],
   }),
   shellComponent: RootShell,
@@ -111,7 +113,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="mr" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <head>
         <HeadContent />
       </head>

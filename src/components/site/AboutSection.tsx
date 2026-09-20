@@ -1,5 +1,6 @@
 import { brand, storyFeatures } from "@/data/site";
 import heroImg3 from "@/assets/hero-3.jpg";
+import logoImg from "@/assets/logo.jpg";
 import { Sparkles, MapPin, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -20,14 +21,16 @@ export function AboutSection() {
             </div>
 
             {/* Floating Experience Badge */}
-            <div className="absolute -bottom-4 sm:-bottom-6 right-2 sm:right-6 rounded-xl sm:rounded-2xl bg-card p-3 sm:p-5 border border-border shadow-lg max-w-[200px] sm:max-w-[240px]">
+            <div className="absolute -bottom-4 sm:-bottom-6 right-2 sm:right-6 rounded-xl sm:rounded-2xl bg-card p-2.5 sm:p-4 border border-border shadow-lg max-w-[210px] sm:max-w-[250px]">
               <div className="flex items-center gap-2.5 sm:gap-3">
-                <div className="flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-spice text-white">
-                  <Sparkles className="h-5 w-5 sm:h-6 sm:w-6 text-gold" />
-                </div>
+                <img
+                  src={logoImg}
+                  alt={brand.name}
+                  className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover shrink-0 border border-primary/20 shadow-xs"
+                />
                 <div>
-                  <p className="text-[11px] sm:text-xs font-bold text-foreground">{brand.short}</p>
-                  <p className="text-[10px] sm:text-[11px] text-muted-foreground line-clamp-1">{brand.tagline}</p>
+                  <p className="text-[11px] sm:text-xs font-bold text-foreground leading-tight">{brand.short}</p>
+                  <p className="text-[10px] sm:text-[11px] text-primary font-medium mt-0.5 line-clamp-1">Pure Flavours</p>
                 </div>
               </div>
             </div>
